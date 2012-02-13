@@ -7,7 +7,7 @@ Node.js implementation of Extract Widget using https://github.com/Nais/node-dom/
 
 Real-time extraction of HTML gadgets and associated properties from web pages based on given criterias.
 
-It can be used as a server, then parameters are passed in the URL, or directly as an independant node.js module.
+It can be used as a server or an API, then parameters are passed in the URL, or directly as an independant node.js module.
 
 ## Install :
 
@@ -22,7 +22,7 @@ or
 Complementary modules :
 	 node-ewa
 	 
-	 Note : node-ewa is not a public module for now, so you can only use node-gadgets's server mode. 
+	 Note : node-ewa is not a public module for now, so you can only use node-gadgets's server/API mode. 
 
 ## Use :
 
@@ -49,7 +49,7 @@ Complementary modules :
 
 	genGadgets(params,response);
 ````
-### As a server :
+### As a server/API :
 	
 ````
 	var http = require('http'),  
@@ -86,7 +86,7 @@ To call it from a script :
 
 	xscript.onload or onreadystatechange --> do what you have to do with the output
 ````
-Output format (see more details below) : test.gadgets=(Array containing the gadgets) (where test corresponds to the parameter 'name')
+Output format (see more details below) : test.gadgets=(Array containing the gadgets) (where 'test' does correspond to the parameter 'name')
 
 Example : xscript.onload=function() {alert(test.gadgets)};
 
@@ -98,7 +98,7 @@ Example : xscript.onload=function() {alert(test.gadgets)};
 
 url : the url of the site where you want to extract gadgets from.
 
-name : the name that will become the name of the global var containing the output in 'gadgets' property (example : test.gadgets).
+name : the name that will become the name of the global var containing the output in its 'gadgets' property (example : test.gadgets).
 
 fetch : node-dom FetchExternalResources parameter, recommended value : {"img":"", "input":""}
 
@@ -118,7 +118,7 @@ The output is an Array of :
 
 [gadget html,width,height,gadget name,reserved,base,price,html of regexp object]
 
-No json format here for historical reasons...
+No json format here for now for historical reasons and backward compatibility with existing projects (TODO later).
 
 gadget html : the html of the gadget.
 
@@ -130,13 +130,15 @@ base : the baseURI of the target web site (must be added as a BASE tag when usin
 
 price : the price associated to the gadget if it exists (example : 115$ for our example above)
 
-html of regexp object : html of the initial object detected with the regexp from which the gadget has been constructed (example : a price, then node gadget will see if a gadget can be constructed from this price looking at his parents and checking if the result can be considered as a product for example)
+html of regexp object : html of the initial object detected with the regexp from which the gadget has been constructed (example : a price, then node gadget will see if a gadget can be constructed from this price looking at his parents and checking if the result can be considered as a product)
 	
-## Tests :
+## Tests and API :
 
 Webble project : http://www.webble.it/mindex5.php
 
-Naïs server : http://213.246.53.127:1341/gengadgets?params
+jCore server : http://213.246.53.127:1341/gengadgets?params
+
+You can use the API on jCore server : http://213.246.53.127:1341 (if by any unforeseen reasons the server is down, please advise).
 
 See tests.txt in ./test
 
