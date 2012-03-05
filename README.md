@@ -1,7 +1,7 @@
 node-gadgets
 ===
 
-Node.js implementation of Extract Widget using https://github.com/Nais/node-dom/
+Node.js implementation of Extract Widget using https://github.com/Ayms/node-dom/
 
 ## Purpose:
 
@@ -15,7 +15,7 @@ It can be used as a server or an API, then parameters are passed in the URL, or 
 
 or
 
-    git clone http://github.com/Nais/node-gadgets.git
+    git clone http://github.com/Ayms/node-gadgets.git
     cd node-gadgets
     npm link .
 	
