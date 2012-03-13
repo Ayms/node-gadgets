@@ -136,7 +136,7 @@ html of regexp object : html of the initial object detected with the regexp from
 	
 ## Tests and API :
 
-Webble project : http://www.webble.it/mindex5.php
+Webble project : http://www.webble.it/mindex5.php (quick test : click on OK, then on first link that appears)
 
 jCore server (http://www.jcore.fr) : http://213.246.53.127:1341/gengadgets?params
 
