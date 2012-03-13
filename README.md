@@ -43,9 +43,9 @@ Complementary modules :
 	};
 	
 	var params='url=http://www.google.com'+'&name=test';
-	params +='&fetch='+$E('{"img":"", "input":""}')+'&proc='+$E('{"img":"","input":""}')+'&gadget=true&price=true&regexp='+$E(\\$|€')&search='+$E('Koncept californie');
+	params +='&fetch='+$E('{"img":"", "input":""}')+'&proc='+$E('{"img":"","input":""}')+'&gadget=true&price=true&regexp='+$E(\\$|€')&search='+$E('Koncept californie')&nbmax=20;
 
-    //possible params (see below) : url-fetch-proc-gadget-price-search-regexp
+    //possible params (see below) : url-fetch-proc-gadget-price-search-regexp-nbmax
 
 	genGadgets(params,response);
 ````
@@ -69,10 +69,10 @@ Complementary modules :
 ````
 To call it directly :
 
-http://myserver:myport/gengadgets?url=http://www.castorama.fr/store/Parquet-et-stratifie-cat_id_3144.htm&name=page&fetch={"img":"", "input":""}&proc={"img":"","input":""}&gadget=true&price=true&regexp=\$|€
+http://myserver:myport/gengadgets?url=http://www.castorama.fr/store/Parquet-et-stratifie-cat_id_3144.htm&name=page&fetch={"img":"", "input":""}&proc={"img":"","input":""}&gadget=true&price=true&regexp=\$|€&nbmax=20
 
 Example with encoded parameters :
-http://213.246.53.127:1341/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC
+http://213.246.53.127:1341/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
 
 To call it from a script :
 
@@ -80,7 +80,7 @@ To call it from a script :
 	var xscript=document.createElement('SCRIPT');
 	xscript.type="text/javascript";
 	var params='url=http://www.target_site.com'+'&name=test';
-	params +='&fetch='+$E('{"img":"", "input":""}')+'&proc='+$E('{"img":"","input":""}')+'&gadget=true&price=true&regexp='+$E('\\$|€');
+	params +='&fetch='+$E('{"img":"", "input":""}')+'&proc='+$E('{"img":"","input":""}')+'&gadget=true&price=true&regexp='+$E('\\$|€')+'&nbmax=20';
 	xscript.src='http://myserver:myport/gengadgets?'+params;
 	document.head.appendChild(xscript);
 
@@ -112,6 +112,8 @@ price : if present, indicates that you want the price (if any) associated to the
 
 search : if present, indicates that once the gadgets have been selected with the regexp, you can filter these gadgets based on the value of search (example : you have selected on a sport web sites gadgets related to a price, you want in the output only gadgets related to shoes, then you might use search=shoe)
 
+nbmax : important parameter for performances, the value does specify a limit for the weight of searched gadgets so node-gadgets does not spend a lot of time processing gadgets that are not relevant. The default value is 100, recommended value is 20.
+
 ## Output :
 
 The output is an Array of :
@@ -137,6 +139,10 @@ html of regexp object : html of the initial object detected with the regexp from
 Webble project : http://www.webble.it/mindex5.php
 
 jCore server (http://www.jcore.fr) : http://213.246.53.127:1341/gengadgets?params
+
+Example :
+
+http://213.246.53.127:1342/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
 
 You can use the API on jCore server : http://213.246.53.127:1341 (if by any unforeseen reasons the server is down, please advise).
 
