@@ -142,7 +142,7 @@ jCore server (http://www.jcore.fr) : http://213.246.53.127:1341/gengadgets?param
 
 Example :
 
-http://213.246.53.127:1342/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
+http://213.246.53.127:1341/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
 
 You can use the API on jCore server : http://213.246.53.127:1341 (if by any unforeseen reasons the server is down, please advise).
 
