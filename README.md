@@ -133,6 +133,10 @@ base : the baseURI of the target web site (must be added as a BASE tag when usin
 price : the price associated to the gadget if it exists (example : 115$ for our example above)
 
 html of regexp object : html of the initial object detected with the regexp from which the gadget has been constructed (example : a price, then node gadget will see if a gadget can be constructed from this price looking at his parents and checking if the result can be considered as a product)
+
+## node-Tor tunnelling :
+
+	TODO
 	
 ## Tests and API :
 

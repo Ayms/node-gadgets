@@ -2,7 +2,7 @@
   "name": "node-gadgets",
   "description": "Node.js implementation of Extract Widget using node-dom, it retrieves html gadgets from web pages extracted following given criterias",
   "version": "0.1.0",
-  "homepage": "http://www.infonais.fr",
+  "homepage": "http://www.jcore.fr",
   "keywords": [
 		"gadget",
 		"widget",
@@ -31,7 +31,7 @@
           "type": "MIT"
       }
   ],
-  "author": "Aymeric Vitte <aymeric2@infonais.fr> (http://www.infonais.fr)",
+  "author": "Aymeric Vitte <avitte@jcore.fr> (http://www.jcore.fr)",
   "main": "./lib/gadgets.js",
   "engines": {
     "node": "*"
