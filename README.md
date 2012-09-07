@@ -72,7 +72,7 @@ To call it directly :
 http://myserver:myport/gengadgets?url=http://www.castorama.fr/store/Parquet-et-stratifie-cat_id_3144.htm&name=page&fetch={"img":"", "input":""}&proc={"img":"","input":""}&gadget=true&price=true&regexp=\$|€&nbmax=20
 
 Example with encoded parameters :
-http://213.246.53.127:1341/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
+http://my_server/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
 
 To call it from a script :
 
@@ -136,19 +136,17 @@ html of regexp object : html of the initial object detected with the regexp from
 
 ## node-Tor tunnelling :
 
-	TODO
+	TODO - watch https://github.com/Ayms/node-Tor
 	
 ## Tests and API :
 
 Webble project : http://www.webble.it/mindex5.php (quick test : click on OK, then on first link that appears)
 
-jCore server (http://www.jcore.fr) : http://213.246.53.127:1341/gengadgets?params
+jCore server (http://www.jcore.fr) : http://my_server/gengadgets?params
 
 Example :
 
-http://213.246.53.127:1341/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
-
-You can use the API on jCore server : http://213.246.53.127:1341 (if by any unforeseen reasons the server is down, please advise).
+http://my_server/gengadgets?url=http%3A%2F%2Fwww.castorama.fr%2Fstore%2FParquet-et-stratifie-cat_id_3144.htm&name=page&fetch=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&proc=%7B%22img%22%3A%22%22%2C%20%22input%22%3A%22%22%7D&gadget=true&price=true&regexp=%5C%24%7C%E2%82%AC&nbmax=20
 
 See tests.txt in ./test
 
