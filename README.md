@@ -136,7 +136,9 @@ html of regexp object : html of the initial object detected with the regexp from
 
 ## node-Tor tunnelling :
 
-	TODO - watch https://github.com/Ayms/node-Tor
+	TODO
+
+Watch https://github.com/Ayms/node-Tor
 	
 ## Tests and API :
 
